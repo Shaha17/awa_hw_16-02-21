@@ -27,11 +27,11 @@ namespace DZ_16_02_21
 			Parallel.ForEach(xList, (item) =>
 			{
 				var rnd = new Random();
-				int beginIndex = rnd.Next(1, list.Count / 5);
-				int endIndex = beginIndex + rnd.Next(4, 10);
+				int beginIndex = rnd.Next(0, list.Count / 4);
+				int endIndex = beginIndex + rnd.Next(4, list.Count / 4);
 				var randomizeList = list.GetRange(beginIndex, endIndex);
 
-				Thread.Sleep(new Random().Next(50, 1000));
+				Thread.Sleep(new Random().Next(50, 500));
 				// Ради Джасура 🙄, надо раскоментировать это и закоментировать предыдущую строчку
 				// int index = xList.FindIndex(x => x == item);
 				// Thread.Sleep(index*100);
