@@ -26,12 +26,11 @@ namespace DZ_16_02_21
 			//Из полученного списка позиций параллельно запускаем потоки с прорисоквкой столбцов
 			Parallel.ForEach(xList, (item) =>
 			{
-				var rnd = new Random();
-				int beginIndex = rnd.Next(0, list.Count / 4);
-				int endIndex = beginIndex + rnd.Next(4, list.Count / 4);
-				var randomizeList = list.GetRange(beginIndex, endIndex);
+				int beginIndex = rnd.Next(0, list.Count - 11);
+				int count = rnd.Next(6,10);
+				var randomizeList = list.GetRange(beginIndex, count);
 
-				Thread.Sleep(new Random().Next(50, 500));
+				Thread.Sleep(rnd.Next(50, 500));
 				// Ради Джасура 🙄, надо раскоментировать это и закоментировать предыдущую строчку
 				// int index = xList.FindIndex(x => x == item);
 				// Thread.Sleep(index*100);
